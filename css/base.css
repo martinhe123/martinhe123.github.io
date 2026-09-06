@@ -4,12 +4,13 @@
     --color-text: #151719;
     --color-secondary: #5e666c;
     --color-line: rgba(75, 96, 110, 0.14);
-    --glass-bg: rgba(248, 251, 252, 0.42);
+    --glass-bg: rgba(240, 247, 251, 0.52);
     --glass-border: rgba(111, 137, 153, 0.22);
-    --glass-panel-border: rgba(95, 124, 142, 0.34);
-    --glass-highlight: rgba(255, 255, 255, 0.94);
-    --glass-edge-shadow: rgba(64, 88, 103, 0.12);
-    --glass-shadow: rgba(42, 65, 79, 0.075);
+    --glass-panel-border: rgba(100, 135, 158, 0.55);
+    --glass-highlight: rgba(255, 255, 255, 0.95);
+    --glass-edge-shadow: rgba(75, 105, 125, 0.15);
+    --glass-shadow: rgba(45, 70, 85, 0.14);
+    --pixel-detail: rgba(72, 116, 145, 0.55);
     --precision-line: rgba(81, 106, 121, 0.3);
     --page-padding: clamp(1.5rem, 4vw, 4.5rem);
     --transition-duration: 300ms;
