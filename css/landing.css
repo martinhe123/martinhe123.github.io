@@ -1,47 +1,32 @@
-:root {
-    --timeline-axis: clamp(1rem, 2.5vw, 2.25rem);
-    --timeline-connector: clamp(2.25rem, 3.2vw, 3.25rem);
-}
-/* Landing composition */
-.landing-screen {
-    overflow: hidden;
-}
-
 .landing-screen .screen-content {
     display: grid;
     place-items: center;
-    height: 100%;
 }
 
 .landing-layout {
-    position: relative;
     display: grid;
-    grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+    grid-template-columns: 2fr 3fr;
     grid-template-rows: 1fr auto;
-    column-gap: clamp(3rem, 4vw, 5rem);
-    row-gap: 1.5rem;
+    gap: 2rem 4rem;
     align-items: center;
     width: min(84vw, 82rem);
-    height: clamp(32rem, 68vh, 40rem);
+    min-height: 34rem;
 }
 
-/* Landing identity */
 .identity {
     grid-column: 1;
     grid-row: 1;
     max-width: 32rem;
-    padding: clamp(2rem, 3vw, 3rem);
+    padding: clamp(2rem, 3vw, 2.5rem);
     border: 1px solid var(--glass-border);
     border-radius: 2px;
     background: var(--glass-bg);
-    box-shadow: 0 12px 32px var(--glass-shadow);
-    backdrop-filter: blur(14px);
-    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 12px 30px var(--glass-shadow);
 }
 
 .identity h1 {
     margin: 0;
-    font-size: clamp(5.5rem, 7vw, 8rem);
+    font-size: clamp(4.5rem, 7vw, 8rem);
     font-weight: 500;
     line-height: 0.9;
     letter-spacing: -0.065em;
@@ -49,27 +34,25 @@
 }
 
 .introduction {
-    max-width: 26.25rem;
-    margin: clamp(1.75rem, 2.5vw, 2.75rem) 0 0;
+    max-width: 26rem;
+    margin: 2rem 0 0;
     color: var(--color-secondary);
-    font-size: clamp(1rem, 1.2vw, 1.1875rem);
-    line-height: 1.48;
+    font-size: clamp(1rem, 1.2vw, 1.125rem);
+    line-height: 1.5;
 }
 
-/* Timeline */
 .timeline {
     grid-column: 2;
     grid-row: 1;
     width: 100%;
     max-width: 40rem;
-    height: min(100%, 34rem);
+    height: 30rem;
 }
 
 .timeline-list {
     position: relative;
     display: grid;
     grid-template-rows: repeat(5, 1fr);
-    width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
@@ -80,9 +63,9 @@
     position: absolute;
     top: 10%;
     bottom: 10%;
-    left: var(--timeline-axis);
+    left: 6px;
     width: 1px;
-    background: var(--timeline-line);
+    background: var(--line-color);
     content: "";
 }
 
@@ -90,39 +73,33 @@
     position: relative;
     display: flex;
     align-items: center;
-    padding-left: calc(var(--timeline-axis) + var(--timeline-connector) + 1rem);
+    padding-left: 4rem;
 }
 
 .timeline-item::before {
     position: absolute;
     top: 50%;
-    left: var(--timeline-axis);
-    width: var(--timeline-connector);
+    left: 6px;
+    width: 2.5rem;
     height: 1px;
-    background: var(--timeline-connector-color);
+    background: var(--line-color);
     content: "";
 }
 
 .timeline-node {
     position: absolute;
-    z-index: 1;
     top: 50%;
-    left: calc(var(--timeline-axis) - 6px);
+    left: 0;
     width: 13px;
     height: 13px;
-    border: 1px solid var(--timeline-node-border);
-    border-radius: 1px;
-    background: var(--timeline-node-bg);
+    border: 1px solid var(--node-border);
+    background: var(--node-bg);
     transform: translateY(-50%);
 }
 
 .timeline-item-current .timeline-node {
-    border-color: var(--timeline-current-border);
-    background: var(--timeline-current-bg);
-}
-
-.milestone-copy {
-    width: min(100%, 20.625rem);
+    border-color: var(--color-text);
+    background: var(--glass-bg);
 }
 
 .timeline-year,
@@ -134,16 +111,14 @@
 .timeline-year {
     margin-bottom: 0.25rem;
     color: var(--color-secondary);
-    font-size: clamp(0.75rem, 0.9vw, 0.8125rem);
+    font-size: 0.75rem;
     font-weight: 500;
-    line-height: 1.25;
     letter-spacing: 0.1em;
     text-transform: uppercase;
 }
 
 .timeline-item h3 {
-    color: var(--color-text);
-    font-size: clamp(1.0625rem, 1.25vw, 1.25rem);
+    font-size: clamp(1rem, 1.25vw, 1.25rem);
     font-weight: 500;
     line-height: 1.3;
     white-space: nowrap;
@@ -152,7 +127,7 @@
 .timeline-detail {
     margin-top: 0.25rem;
     color: var(--color-secondary);
-    font-size: clamp(0.75rem, 0.95vw, 0.875rem);
+    font-size: 0.8125rem;
     line-height: 1.4;
 }
 
@@ -162,97 +137,51 @@
     justify-self: end;
 }
 
-/* Responsive */
-@media (max-width: 64rem) {
-    :root {
-        --timeline-axis: clamp(0.75rem, 2vw, 1.5rem);
-        --timeline-connector: clamp(1.75rem, 3vw, 2.5rem);
-    }
-    .landing-layout {
-        column-gap: 2rem;
-        width: 90vw;
-    }
-    .identity h1 {
-        font-size: clamp(4.5rem, 7vw, 6.5rem);
-    }
-    .introduction {
-        max-width: 22rem;
-        font-size: clamp(1rem, 1.7vw, 1.125rem);
-    }
-    .milestone-copy {
-        width: min(100%, 20rem);
-    }
-}
-
 @media (max-width: 50rem) {
-    .landing-screen {
-        overflow-y: auto;
-    }
-    .landing-screen .screen-content {
-        height: auto;
-    }
     .landing-layout {
-        grid-template-columns: minmax(0, 1fr);
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
-        row-gap: clamp(3.5rem, 12vw, 5rem);
+        gap: 3rem;
         width: 100%;
-        height: auto;
-        min-height: 100%;
-        padding: clamp(1.5rem, 6vw, 2.5rem);
+        min-height: 0;
     }
-    .identity {
-        grid-column: 1;
-        grid-row: auto;
-        padding-top: clamp(1.5rem, 6vh, 3.5rem);
-    }
-    .identity h1 {
-        font-size: clamp(3.25rem, 16vw, 5.25rem);
-    }
-    .introduction {
-        max-width: 27rem;
-        margin-top: 2rem;
-    }
-    .timeline {
-        grid-column: 1;
-        grid-row: auto;
-        max-width: 31rem;
-        height: auto;
-    }
-    .timeline-list {
-        grid-template-rows: none;
-        gap: 2.25rem;
-        height: auto;
-    }
-    .timeline-list::before {
-        top: 0.45rem;
-        bottom: 0.45rem;
-        left: 4px;
-    }
-    .timeline-item {
-        display: block;
-        padding-left: 1.75rem;
-    }
-    .timeline-item::before {
-        top: 0.45rem;
-        left: 4px;
-        width: 1.25rem;
-    }
-    .timeline-node {
-        top: 0.45rem;
-        left: 0;
-        transform: none;
-    }
-    .milestone-copy {
-        width: min(100%, 25rem);
-    }
-    .timeline-item h3 {
-        white-space: normal;
-    }
+
+    .identity,
+    .timeline,
     #enter-button {
         grid-column: 1;
         grid-row: auto;
+    }
+
+    .identity {
+        padding: clamp(1.5rem, 6vw, 2.5rem);
+    }
+
+    .identity h1 {
+        font-size: clamp(3.25rem, 16vw, 5.25rem);
+    }
+
+    .timeline {
+        max-width: 31rem;
+        height: auto;
+    }
+
+    .timeline-list {
+        grid-template-rows: none;
+        gap: 2rem;
+    }
+
+    .timeline-list::before {
+        top: 1rem;
+        bottom: 1rem;
+    }
+
+    .timeline-item h3 {
+        white-space: normal;
+    }
+
+    #enter-button {
         justify-self: end;
-        position: static;
         margin-bottom: 0.5rem;
     }
 }
