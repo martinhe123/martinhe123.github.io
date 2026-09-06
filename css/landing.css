@@ -152,8 +152,8 @@
 
 #enter-button {
     position: absolute;
-    right: 0;
-    bottom: -4.25rem;
+    right: 2rem;
+    bottom: 2rem;
 }
 
 /* Responsive */
@@ -176,9 +176,6 @@
     }
     .milestone-copy {
         width: min(100%, 20rem);
-    }
-    #enter-button {
-        bottom: -3.75rem;
     }
 }
 
