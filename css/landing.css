@@ -27,7 +27,7 @@
     border: 1px solid var(--glass-panel-border);
     border-radius: 2px;
     background: var(--glass-bg);
-    box-shadow: 0 12px 32px rgba(45, 70, 85, 0.08);
+    box-shadow: 0 12px 32px rgba(30, 49, 61, 0.08);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
 }
