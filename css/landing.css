@@ -13,7 +13,7 @@
     min-height: 34rem;
     padding: clamp(2rem, 4vw, 4rem);
     border: 1px solid var(--glass-border);
-    border-radius: 8px;
+    border-radius: 20px;
     background: var(--glass-bg);
     box-shadow: 0 0 30px var(--glass-shadow);
 }
