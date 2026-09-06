@@ -21,8 +21,8 @@
     column-gap: clamp(3rem, 4vw, 5rem);
     row-gap: 1.5rem;
     align-items: center;
-    width: min(90vw, 90rem);
-    height: clamp(34rem, 72vh, 43rem);
+    width: min(84vw, 82rem);
+    height: clamp(32rem, 68vh, 40rem);
     padding: clamp(2.5rem, 4vw, 4.5rem);
     border: 1px solid var(--glass-panel-border);
     border-radius: 2px;
