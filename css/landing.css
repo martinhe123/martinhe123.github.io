@@ -151,9 +151,13 @@
 }
 
 #enter-button {
-    position: absolute;
+    position: fixed;
     right: 2rem;
     bottom: 2rem;
+    z-index: 9999;
+    display: block;
+    visibility: visible;
+    opacity: 1;
 }
 
 /* Responsive */
