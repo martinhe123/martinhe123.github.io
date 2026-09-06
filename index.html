@@ -1,12 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Martin's Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Martin He | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-    <h1>Hello World</h1>
-    <p>This is my 15-113 Project 1 website.</p>
+    <main>
+        <section class="screen landing-screen is-active" id="landing" aria-labelledby="landing-title">
+            <div class="screen-content landing-layout">
+                <h1 id="landing-title">Martin He</h1>
+                <p class="introduction">Architect and computational designer working across architecture, software, and AI.</p>
+                <button class="text-control" id="enter-button" type="button">Enter</button>
+            </div>
+        </section>
+
+        <section class="screen portfolio-screen" id="portfolio" aria-labelledby="portfolio-title" aria-hidden="true" inert>
+            <div class="screen-content portfolio-layout">
+                <p class="portfolio-name">Martin He</p>
+                <h2 id="portfolio-title" tabindex="-1">Portfolio</h2>
+                <button class="text-control" id="back-button" type="button">Back</button>
+            </div>
+        </section>
+    </main>
 </body>
 </html>
