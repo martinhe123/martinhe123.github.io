@@ -130,7 +130,9 @@ Accessibility:
 
 # CSS Guidelines
 
-Keep styles in style.css.
+Keep styles in the appropriate file inside css/.
+
+Keep page-specific styling separated by responsibility. Do not allow one CSS file to grow into a catch-all stylesheet.
 
 Prefer:
 - CSS variables for repeated design values
@@ -164,10 +166,13 @@ Current intended structure:
 
 /
   index.html
-  style.css
   script.js
   README.md
   AGENTS.md
+  css/
+    base.css
+    landing.css
+    portfolio.css
   images/
 
 Store image assets inside images/.
@@ -192,4 +197,3 @@ After changes:
 - summarize what was changed
 - explain any important HTML/CSS/JavaScript concepts introduced
 - mention any assumptions made
-
