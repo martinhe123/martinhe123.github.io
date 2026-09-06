@@ -11,17 +11,17 @@
     align-items: center;
     width: min(84vw, 82rem);
     min-height: 34rem;
+    padding: clamp(2rem, 4vw, 4rem);
+    border: 1px solid var(--glass-border);
+    border-radius: 2px;
+    background: var(--glass-bg);
+    box-shadow: 0 12px 30px var(--glass-shadow);
 }
 
 .identity {
     grid-column: 1;
     grid-row: 1;
     max-width: 32rem;
-    padding: clamp(2rem, 3vw, 2.5rem);
-    border: 1px solid var(--glass-border);
-    border-radius: 2px;
-    background: var(--glass-bg);
-    box-shadow: 0 12px 30px var(--glass-shadow);
 }
 
 .identity h1 {
@@ -144,6 +144,7 @@
         gap: 3rem;
         width: 100%;
         min-height: 0;
+        padding: clamp(1.5rem, 6vw, 2.5rem);
     }
 
     .identity,
@@ -151,10 +152,6 @@
     #enter-button {
         grid-column: 1;
         grid-row: auto;
-    }
-
-    .identity {
-        padding: clamp(1.5rem, 6vw, 2.5rem);
     }
 
     .identity h1 {
