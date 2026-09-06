@@ -130,21 +130,76 @@ Accessibility:
 
 # CSS Guidelines
 
-Keep styles in the appropriate file inside css/.
+Keep the CSS architecture intentionally simple. The project uses:
 
-Keep page-specific styling separated by responsibility. Do not allow one CSS file to grow into a catch-all stylesheet.
+- `base.css` = global/shared styles and the single source of truth for shared design values
+- `landing.css` = landing-screen-specific styles only
+- `portfolio.css` = portfolio-screen-specific styles only
+
+## Single Source of Truth
+
+`base.css` is the single source of truth for shared styling. Define shared values only there, including:
+
+- colors
+- CSS variables
+- typography and page background
+- shared spacing values
+- shared buttons and controls
+- shared borders, shadows, and transition values
+- global box-sizing and reset rules
+
+Do not redefine shared values in `landing.css` or `portfolio.css`. If both pages use the same component appearance, define it once in `base.css`. When changing a shared design value, change the source definition instead of adding a later override.
+
+Avoid CSS rules whose main purpose is to undo or override another CSS rule. Before adding a new rule, check whether the existing source rule should be changed instead.
+
+Do not fix CSS by adding another override. Find the source rule and change it there.
+
+## Page-Specific CSS
+
+`landing.css` should contain only landing-specific styles, such as:
+
+- `.landing-layout`
+- `.identity`
+- `.timeline`
+- landing-specific responsive layout
+
+`portfolio.css` should contain only portfolio-specific styles, such as:
+
+- `.portfolio-layout`
+- project layouts
+- portfolio-specific responsive layout
+
+Do not place global/shared styling in page-specific CSS files.
+
+## Simplicity
+
+This is a small 6-unit student project. Favor the simplest implementation that clearly works.
 
 Prefer:
-- CSS variables for repeated design values
-- flexbox and CSS grid
-- responsive media queries
-- simple, understandable CSS
+
+- short, readable CSS
+- simple class selectors
+- CSS Grid or Flexbox where useful
+- a small number of CSS variables
+- one obvious place to change each design value
+- straightforward media queries
+- explicit code over clever abstractions
 
 Avoid:
-- overly complicated selectors
+
+- unnecessary wrapper elements
+- deeply nested selectors
+- selector specificity battles
+- repeated overrides
+- `!important`
+- unnecessary CSS variables
+- excessive utility classes
 - unnecessary animations
-- excessive absolute positioning
-- large amounts of duplicated CSS
+- complicated responsive systems
+- duplicated declarations
+- abstractions created only to reduce a few lines of code
+
+If five simple lines are easier to understand than a reusable abstraction, use the five simple lines.
 
 # JavaScript Guidelines
 
@@ -177,21 +232,51 @@ Current intended structure:
 
 Store image assets inside images/.
 
+- `base.css`: global/shared design system
+- `landing.css`: landing-only layout and styling
+- `portfolio.css`: portfolio-only layout and styling
+- `script.js`: all JavaScript behavior
+
+Do not create additional CSS or JavaScript files unless there is a clear, substantial reason. Do not split code into more files merely for organizational purity.
+
 Do not create unnecessary files or folders.
 
 # Working Style
 
 Before making changes:
+
 1. Read this AGENTS.md.
 2. Inspect the existing implementation.
-3. Preserve working functionality unless the requested task requires changing it.
+3. Understand which file owns the behavior or style being changed.
+4. Preserve working functionality unless the task requires changing it.
 
 When implementing a task:
-- make the smallest coherent set of changes necessary
-- keep code understandable for a student learning web development
-- do not overengineer
+
+- make the smallest coherent change necessary
+- prefer modifying existing code over adding new systems
+- keep code understandable to a student learning HTML, CSS, and JavaScript
+- keep one source of truth for shared values
+- do not solve CSS problems by stacking overrides
+- remove obsolete code when replacing an implementation
+- do not create helper functions, classes, variables, or files without a clear need
 - do not introduce dependencies without permission
 - do not redesign unrelated parts of the site
+- do not optimize prematurely
+- do not build infrastructure for hypothetical future requirements
+
+This is a 6-unit course project, not a production framework.
+
+Code quality means:
+
+1. easy to understand
+2. easy to modify
+3. minimal duplication
+4. clear ownership
+5. few moving parts
+
+It does not mean maximizing abstraction or architectural sophistication.
+
+When two implementations work equally well, choose the simpler one.
 
 After changes:
 - summarize what was changed
