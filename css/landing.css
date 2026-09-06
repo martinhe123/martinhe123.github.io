@@ -15,7 +15,7 @@
     border: 1px solid var(--glass-border);
     border-radius: 2px;
     background: var(--glass-bg);
-    box-shadow: 0 12px 30px var(--glass-shadow);
+    box-shadow: 0 0 30px var(--glass-shadow);
 }
 
 .identity {
