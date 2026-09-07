@@ -6,7 +6,7 @@ const portfolioTitle = document.querySelector("#portfolio-title");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const projects = document.querySelectorAll(".project");
 const transitionDuration = 300;
-const filterTransitionDuration = 250;
+const filterTransitionDuration = 150;
 let filterHideTimeout;
 let filterFadeFrame;
 
