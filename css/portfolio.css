@@ -1,5 +1,5 @@
 .portfolio-layout {
-    padding-bottom: clamp(4rem, 8vw, 8rem);
+    padding-bottom: 4rem;
 }
 
 .portfolio-header {
@@ -14,8 +14,8 @@
 }
 
 .portfolio-layout h2 {
-    margin: clamp(4rem, 9vw, 8rem) 0 clamp(3rem, 7vw, 6rem);
-    font-size: clamp(4rem, 9vw, 8rem);
+    margin: 3rem 0;
+    font-size: clamp(4rem, 7vw, 7rem);
     font-weight: 400;
     line-height: 0.9;
     letter-spacing: -0.06em;
@@ -23,8 +23,8 @@
 
 .project-gallery {
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(3rem, 6vw, 6rem) clamp(2rem, 4vw, 4rem);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 3rem 2rem;
 }
 
 .project {
@@ -49,19 +49,15 @@
 }
 
 .project h3 {
-    margin: 1rem 0 0;
+    margin: 0.75rem 0 0;
     font-size: 1rem;
     font-weight: 500;
     line-height: 1.4;
 }
 
 @media (max-width: 50rem) {
-    .portfolio-layout h2 {
-        margin-top: 4rem;
-    }
-
     .project-gallery {
         grid-template-columns: 1fr;
-        gap: 3.5rem;
+        gap: 3rem;
     }
 }
