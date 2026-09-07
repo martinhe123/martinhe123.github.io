@@ -6,6 +6,9 @@ const portfolioTitle = document.querySelector("#portfolio-title");
 const filterButtons = document.querySelectorAll("[data-filter]");
 const projects = document.querySelectorAll(".project");
 const transitionDuration = 300;
+const filterTransitionDuration = 300;
+let filterHideTimeout;
+let filterFadeFrame;
 
 function showScreen(screenToShow, screenToHide) {
     screenToHide.classList.remove("is-active");
@@ -18,10 +21,36 @@ function showScreen(screenToShow, screenToHide) {
 }
 
 function filterProjects(category) {
+    window.clearTimeout(filterHideTimeout);
+    window.cancelAnimationFrame(filterFadeFrame);
+
+    const projectsToShow = [];
+    const projectsToHide = [];
+
     projects.forEach((project) => {
         const categories = project.dataset.category.split(" ");
-        project.hidden = category !== "all" && !categories.includes(category);
+        const shouldShow = category === "all" || categories.includes(category);
+
+        if (shouldShow) {
+            project.hidden = false;
+            projectsToShow.push(project);
+        } else {
+            project.classList.add("is-filtering-out");
+            projectsToHide.push(project);
+        }
     });
+
+    filterFadeFrame = window.requestAnimationFrame(() => {
+        projectsToShow.forEach((project) => {
+            project.classList.remove("is-filtering-out");
+        });
+    });
+
+    filterHideTimeout = window.setTimeout(() => {
+        projectsToHide.forEach((project) => {
+            project.hidden = true;
+        });
+    }, filterTransitionDuration);
 }
 
 filterButtons.forEach((button) => {
