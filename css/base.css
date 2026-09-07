@@ -1,8 +1,8 @@
 :root {
-    --color-background: #dfe7ec;
+    --color-background: #e0eaf1;
     --color-text: #151719;
     --color-secondary: #5e666c;
-    --glass-bg: rgba(255, 255, 255, 0.447);
+    --glass-bg: rgba(255, 255, 255, 0.475);
     --glass-border: rgba(157, 202, 218, 0.45);
     --glass-shadow: rgba(156, 188, 209, 0.45);
     --line-color: rgba(81, 106, 121, 0.28);
