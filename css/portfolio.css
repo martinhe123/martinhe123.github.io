@@ -44,6 +44,10 @@
     object-fit: cover;
 }
 
+img.project-preview {
+    opacity: 0.75;
+}
+
 .project-placeholder {
     display: grid;
     place-items: center;
@@ -55,8 +59,6 @@
 .project h3 {
     margin: 0.65rem 0 0;
     font-size: 1rem;
-    font-weight: 500;
-    line-height: 1.4;
 }
 
 @media (max-width: 50rem) {

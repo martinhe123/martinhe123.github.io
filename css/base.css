@@ -33,6 +33,13 @@ button {
     font: inherit;
 }
 
+.introduction,
+.project h3 {
+    color: var(--color-secondary);
+    font-weight: 400;
+    line-height: 1.5;
+}
+
 .visually-hidden {
     position: absolute;
     width: 1px;

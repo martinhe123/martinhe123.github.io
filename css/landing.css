@@ -36,9 +36,7 @@
 .introduction {
     max-width: 26rem;
     margin: 2rem 0 0;
-    color: var(--color-secondary);
     font-size: clamp(1rem, 1.2vw, 1.125rem);
-    line-height: 1.5;
 }
 
 .timeline {
