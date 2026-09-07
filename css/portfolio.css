@@ -2,6 +2,34 @@
     padding-bottom: 2rem;
 }
 
+.portfolio-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0.75rem 1rem;
+    border: 0.5px solid var(--glass-border);
+    border-radius: 10px;
+    background: var(--glass-bg);
+    box-shadow: 0 0 16px var(--glass-shadow);
+}
+
+.portfolio-nav a {
+    color: var(--color-text);
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.portfolio-nav a:hover {
+    color: var(--color-secondary);
+}
+
+.portfolio-nav a:focus-visible {
+    outline: 2px solid var(--color-text);
+    outline-offset: 0.25rem;
+}
+
 .portfolio-layout h2 {
     margin: 1.5rem 0 2rem;
     font-size: clamp(3.5rem, 6vw, 6rem);
@@ -56,6 +84,11 @@ img.project-preview {
 }
 
 @media (max-width: 50rem) {
+    .portfolio-nav {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
     .project-gallery {
         grid-template-columns: 1fr;
         gap: 3rem;
