@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Martin He | Portfolio</title>
+
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/landing.css">
     <link rel="stylesheet" href="css/portfolio.css">
+
     <script src="script.js" defer></script>
 </head>
+
 <body>
     <main>
+        <!-- Landing -->
         <section class="screen landing-screen is-active" id="landing" aria-labelledby="landing-title">
             <div class="screen-content">
                 <div class="landing-layout">
@@ -18,8 +24,11 @@
                         <h1 id="landing-title">Martin He</h1>
                         <p class="introduction">Architect and computational designer working across architecture, software, and AI.</p>
                     </div>
+
+                    <!-- Timeline -->
                     <aside class="timeline" aria-labelledby="timeline-title">
                         <h2 class="visually-hidden" id="timeline-title">Professional timeline</h2>
+
                         <ol class="timeline-list">
                             <li class="timeline-item">
                                 <span class="timeline-node" aria-hidden="true"></span>
@@ -29,6 +38,7 @@
                                     <p class="timeline-detail">Carnegie Mellon University</p>
                                 </div>
                             </li>
+
                             <li class="timeline-item">
                                 <span class="timeline-node" aria-hidden="true"></span>
                                 <div class="milestone-copy">
@@ -37,6 +47,7 @@
                                     <p class="timeline-detail">EOA Architects</p>
                                 </div>
                             </li>
+
                             <li class="timeline-item">
                                 <span class="timeline-node" aria-hidden="true"></span>
                                 <div class="milestone-copy">
@@ -45,6 +56,7 @@
                                     <p class="timeline-detail">Carnegie Mellon University</p>
                                 </div>
                             </li>
+
                             <li class="timeline-item">
                                 <span class="timeline-node" aria-hidden="true"></span>
                                 <div class="milestone-copy">
@@ -53,6 +65,7 @@
                                     <p class="timeline-detail">ML + Computer Science<br>Carnegie Mellon University</p>
                                 </div>
                             </li>
+
                             <li class="timeline-item timeline-item-current">
                                 <span class="timeline-node" aria-hidden="true"></span>
                                 <div class="milestone-copy">
@@ -63,31 +76,62 @@
                             </li>
                         </ol>
                     </aside>
+
                     <button class="text-control" id="enter-button" type="button">Enter</button>
                 </div>
             </div>
         </section>
 
-        <section class="screen portfolio-screen" id="portfolio" aria-labelledby="portfolio-title" aria-hidden="true" inert>
+        <!-- Portfolio -->
+        <section
+            class="screen portfolio-screen"
+            id="portfolio"
+            aria-labelledby="portfolio-title"
+            aria-hidden="true"
+            inert
+        >
             <div class="screen-content portfolio-layout">
                 <header class="portfolio-header">
                     <p class="portfolio-name">Martin He</p>
                     <button class="text-control" id="back-button" type="button">Back</button>
                 </header>
+
                 <h2 id="portfolio-title" tabindex="-1">Portfolio</h2>
+
+                <!-- Projects -->
                 <section class="project-gallery" aria-label="Projects">
                     <article class="project">
-                        <img class="project-preview" src="images/christ_church_cathedral/CCC%20Overall%20Render.png" alt="Christ Church Cathedral project" width="1741" height="1016">
+                        <img
+                            class="project-preview"
+                            src="images/christ_church_cathedral/CCC%20Overall%20Render.png"
+                            alt="Christ Church Cathedral project"
+                            width="1741"
+                            height="1016"
+                        >
                         <h3>Christ Church Cathedral</h3>
                     </article>
 
                     <article class="project">
-                        <img class="project-preview" src="images/henry_horton/16.jpg" alt="Henry Horton project" width="1920" height="1080" loading="lazy">
+                        <img
+                            class="project-preview"
+                            src="images/henry_horton/16.jpg"
+                            alt="Henry Horton project"
+                            width="1920"
+                            height="1080"
+                            loading="lazy"
+                        >
                         <h3>Henry Horton</h3>
                     </article>
 
                     <article class="project">
-                        <img class="project-preview" src="images/VU_residency_and_event_center/1.jpeg" alt="VU Residency and Event Center project" width="1564" height="829" loading="lazy">
+                        <img
+                            class="project-preview"
+                            src="images/VU_residency_and_event_center/1.jpeg"
+                            alt="VU Residency and Event Center project"
+                            width="1564"
+                            height="829"
+                            loading="lazy"
+                        >
                         <h3>VU Residency and Event Center</h3>
                     </article>
 
@@ -116,4 +160,5 @@
         </section>
     </main>
 </body>
+
 </html>
