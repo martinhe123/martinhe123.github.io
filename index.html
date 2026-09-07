@@ -92,12 +92,14 @@
         >
             <div class="screen-content portfolio-layout">
                 <header class="portfolio-topbar">
-                    <h2 id="portfolio-title" tabindex="-1">Portfolio</h2>
+                    <h2 id="portfolio-title" tabindex="-1">
+                        <button class="portfolio-filter-all" type="button" data-filter="all" aria-pressed="true">Portfolio</button>
+                    </h2>
 
                     <nav class="portfolio-nav" aria-label="Portfolio sections">
-                        <a href="#architecture">Architecture</a>
-                        <a href="#computational-design">Computational Design</a>
-                        <a href="#ml">ML</a>
+                        <button type="button" data-filter="architecture" aria-pressed="false">Architecture</button>
+                        <button type="button" data-filter="computational-design" aria-pressed="false">Computational Design</button>
+                        <button type="button" data-filter="ml" aria-pressed="false">ML</button>
                         <a href="#resume">Resume</a>
                         <a href="#contact">Contact</a>
                     </nav>
@@ -105,7 +107,7 @@
 
                 <!-- Projects -->
                 <section class="project-gallery" aria-label="Projects">
-                    <article class="project">
+                    <article class="project" data-category="architecture">
                         <img
                             class="project-preview"
                             src="images/christ_church_cathedral/7.jpg"
@@ -116,7 +118,7 @@
                         <h3>Christ Church Cathedral</h3>
                     </article>
 
-                    <article class="project">
+                    <article class="project" data-category="architecture">
                         <img
                             class="project-preview"
                             src="images/henry_horton/16.jpg"
@@ -128,7 +130,7 @@
                         <h3>Henry Horton</h3>
                     </article>
 
-                    <article class="project">
+                    <article class="project" data-category="architecture">
                         <img
                             class="project-preview"
                             src="images/VU_residency_and_event_center/1.jpeg"
@@ -140,7 +142,7 @@
                         <h3>VU Residency and Event Center</h3>
                     </article>
 
-                    <article class="project">
+                    <article class="project" data-category="architecture computational-design">
                         <img
                             class="project-preview"
                             src="images/astra/Portfolio_CMU_2025_V2_Part7.png"
@@ -152,14 +154,14 @@
                         <h3>Astra</h3>
                     </article>
 
-                    <article class="project">
+                    <article class="project" data-category="ml">
                         <div class="project-preview project-placeholder" aria-hidden="true">
                             <span>No image preview</span>
                         </div>
                         <h3>Electricity Forecast</h3>
                     </article>
 
-                    <article class="project">
+                    <article class="project" data-category="computational-design">
                         <img
                             class="project-preview"
                             src="images/walking_down_Broadway/Portfolio_CMU_2025_V2_Part6.png"
