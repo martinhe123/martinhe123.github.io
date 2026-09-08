@@ -134,7 +134,8 @@ Keep the CSS architecture intentionally simple. The project uses:
 
 - `base.css` = global/shared styles and the single source of truth for shared design values
 - `landing.css` = landing-screen-specific styles only
-- `portfolio.css` = portfolio-screen-specific styles only
+- `portfolio.css` = portfolio gallery and filter styles only
+- `project.css` = reusable styles for individual project pages
 
 ## Single Source of Truth
 
@@ -148,7 +149,7 @@ Keep the CSS architecture intentionally simple. The project uses:
 - shared borders, shadows, and transition values
 - global box-sizing and reset rules
 
-Do not redefine shared values in `landing.css` or `portfolio.css`. If both pages use the same component appearance, define it once in `base.css`. When changing a shared design value, change the source definition instead of adding a later override.
+Do not redefine shared values in `landing.css`, `portfolio.css`, or `project.css`. If both pages use the same component appearance, define it once in `base.css`. When changing a shared design value, change the source definition instead of adding a later override.
 
 Avoid CSS rules whose main purpose is to undo or override another CSS rule. Before adding a new rule, check whether the existing source rule should be changed instead.
 
@@ -166,8 +167,10 @@ Do not fix CSS by adding another override. Find the source rule and change it th
 `portfolio.css` should contain only portfolio-specific styles, such as:
 
 - `.portfolio-layout`
-- project layouts
+- gallery and filter layouts
 - portfolio-specific responsive layout
+
+`project.css` contains shared individual-project layouts, titles, credits, images, captions, and responsive rules. Each project page loads `base.css` first, then `project.css`. Inherit the font family and primary text color from `base.css`; use its variables for shared colors, typography sizes, and spacing. Use reusable `project-*` classes rather than project-name-specific classes. Keep page composition in `project.css` and shared design values in `base.css`.
 
 Do not place global/shared styling in page-specific CSS files.
 
@@ -221,6 +224,7 @@ Current intended structure:
 
 /
   index.html
+  christ-church-cathedral.html
   script.js
   README.md
   AGENTS.md
@@ -228,13 +232,15 @@ Current intended structure:
     base.css
     landing.css
     portfolio.css
+    project.css
   images/
 
 Store image assets inside images/.
 
 - `base.css`: global/shared design system
 - `landing.css`: landing-only layout and styling
-- `portfolio.css`: portfolio-only layout and styling
+- `portfolio.css`: portfolio gallery layout and styling
+- `project.css`: reusable individual-project layout and styling
 - `script.js`: all JavaScript behavior
 
 Do not create additional CSS or JavaScript files unless there is a clear, substantial reason. Do not split code into more files merely for organizational purity.

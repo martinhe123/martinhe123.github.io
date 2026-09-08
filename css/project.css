@@ -1,0 +1,102 @@
+/* Shared layouts for individual project pages. Load after base.css. */
+
+.project-layout {
+    max-width: 82rem;
+}
+
+.project-header {
+    margin: var(--space-section) 0 2.5rem;
+}
+
+.project-header h1 {
+    max-width: 16ch;
+    margin: var(--space-small) 0 var(--space-medium);
+    font-size: var(--font-size-page-title);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.05em;
+}
+
+.project-label,
+.project-location,
+.project-credits dt,
+.project-layout figcaption {
+    color: var(--color-secondary);
+    font-size: var(--font-size-small);
+    line-height: 1.5;
+}
+
+.project-label {
+    margin: 0;
+}
+
+.project-layout figure {
+    margin: 0;
+}
+
+.project-layout img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.project-layout figcaption {
+    margin-top: var(--space-small);
+}
+
+.project-overview,
+.project-pair {
+    display: grid;
+    gap: clamp(2rem, 6vw, 6rem);
+    margin: clamp(3rem, 7vw, 6rem) 0;
+}
+
+.project-credits {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.project-credits dd {
+    margin: 0.25rem 0 var(--space-large);
+}
+
+.project-copy {
+    max-width: 42rem;
+    align-self: center;
+    line-height: 1.75;
+}
+
+.project-copy h2 {
+    margin: 0 0 1.25rem;
+    font-size: var(--font-size-section-title);
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: -0.025em;
+}
+
+.project-copy p {
+    margin: 0 0 var(--space-medium);
+}
+
+.project-overview {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}
+
+.project-pair {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.project-closing {
+    margin: var(--space-section) 0 var(--space-section) auto;
+}
+
+@media (max-width: 50rem) {
+    .project-overview,
+    .project-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .project-header {
+        margin-top: 3rem;
+    }
+}

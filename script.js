@@ -63,18 +63,28 @@ filterButtons.forEach((button) => {
     });
 });
 
-enterButton.addEventListener("click", () => {
-    showScreen(portfolioScreen, landingScreen);
+function showHomeRoute() {
+    const hash = window.location.hash;
+    if (hash !== "#portfolio" && hash !== "#landing" && hash !== "") return;
+
+    const showPortfolio = hash === "#portfolio";
+    showScreen(
+        showPortfolio ? portfolioScreen : landingScreen,
+        showPortfolio ? landingScreen : portfolioScreen
+    );
 
     window.setTimeout(() => {
-        portfolioTitle.focus();
+        (showPortfolio ? portfolioTitle : enterButton).focus({ preventScroll: true });
     }, transitionDuration);
+}
+
+enterButton.addEventListener("click", () => {
+    window.location.hash = "portfolio";
 });
 
 backButton.addEventListener("click", () => {
-    showScreen(landingScreen, portfolioScreen);
-
-    window.setTimeout(() => {
-        enterButton.focus();
-    }, transitionDuration);
+    window.location.hash = "landing";
 });
+
+window.addEventListener("hashchange", showHomeRoute);
+if (window.location.hash === "#portfolio") showHomeRoute();
