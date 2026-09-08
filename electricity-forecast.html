@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electricity Forecast | Martin He</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+    <main>
+        <section class="screen is-active" id="electricity-forecast" aria-labelledby="project-title">
+            <div class="screen-content project-layout">
+                <a class="text-control" href="index.html#portfolio">&larr; Back to portfolio</a>
+                <header class="project-header">
+                    <p class="project-label">Machine Learning / Time-Series Forecasting</p>
+                    <h1 id="project-title">Electricity Forecast</h1>
+                    <p class="project-location">ERCOT Houston Hub / Rare, high-impact events</p>
+                </header>
+
+                <figure>
+                    <a href="images/electricity_forecast/economic-cost.png" aria-label="View full-size chart: Bar chart comparing economic cost across five models; weighted LSTM has the lowest cost">
+                        <img src="images/electricity_forecast/economic-cost.png" alt="Bar chart comparing economic cost across five models; weighted LSTM has the lowest cost" width="1198" height="601" loading="eager">
+                    </a>
+                    <figcaption>Report Figure 3: weighted LSTM achieves the lowest cost under the study's penalty-based evaluation. Lower is better.</figcaption>
+                </figure>
+                <div class="project-overview">
+                    <dl class="project-credits">
+                        <dt>Author</dt><dd>Martin He / Carnegie Mellon University</dd>
+                        <dt>Focus</dt><dd>Time-series forecasting and rare-event detection</dd>
+                        <dt>Dataset</dt><dd>ERCOT Houston Hub hourly electricity prices, 2020&ndash;2023</dd>
+                        <dt>Models</dt><dd>ARIMA and LSTM variants</dd>
+                        <dt>Evaluation</dt><dd>Forecast error, precision, recall, F1, and asymmetric error cost</dd>
+                    </dl>
+                    <div class="project-copy">
+                        <h2>Forecasting the events that matter most</h2>
+                        <p>Electricity prices can appear stable until a rare, extreme movement changes the picture. This project investigates how forecasting models should handle these events when missing a spike carries a greater penalty than raising a false alarm.</p>
+                        <p>The study compares a statistical baseline with several recurrent neural network approaches. Its central question is how to improve rare-event detection while keeping predictions stable during normal conditions.</p>
+                    </div>
+                </div>
+                <div class="project-overview">
+                    <div class="project-copy">
+                        <p class="project-label">Method / Data &amp; Training</p>
+                        <h2>Comparing models on the same signal</h2>
+                    </div>
+                    <div class="project-copy">
+                        <p>Hourly prices are transformed with the inverse hyperbolic sine function, then differenced to address trend and daily seasonality. A chronological split uses 2020&ndash;2021 for training, 2022 for validation, and 2023 for testing.</p>
+                        <p>In this study, a spike means an absolute value above the 95th-percentile threshold in the transformed, differenced series. It is not a fixed dollar-price threshold.</p>
+                        <p>The experiments compare ARIMA, a vanilla LSTM, fixed-weight loss, continuous loss weighting, and oversampling. The selected fixed-weight LSTM applies a weight of 3 to spike errors during training.</p>
+                    </div>
+                </div>
+                <figure>
+                    <a href="images/electricity_forecast/spike-detection.png" aria-label="View full-size chart: Precision, recall, and F1 chart showing the weighted LSTM with the highest F1 score">
+                        <img src="images/electricity_forecast/spike-detection.png" alt="Precision, recall, and F1 chart showing the weighted LSTM with the highest F1 score" width="1219" height="592" loading="lazy">
+                    </a>
+                    <figcaption>Report Figure 4: weighted LSTM offers the strongest precision-recall balance among the compared configurations. Select any chart to view it at full size.</figcaption>
+                </figure>
+                <div class="project-copy project-closing">
+                    <p class="project-label">Results / Detection &amp; False Alarms</p>
+                    <h2>More sensitivity is not always better</h2>
+                    <p>ARIMA misses most spike events, while the vanilla LSTM remains conservative. Oversampling detects more spikes but also produces more false alarms. The fixed-weight LSTM balances these competing errors and achieves the highest F1 score in the reported comparison.</p>
+                    <p>The economic score assigns different penalties to missed spikes and false alarms. It measures the study's error tradeoff, rather than realized trading profit.</p>
+                </div>
+                <figure>
+                    <a href="images/electricity_forecast/false-alarms-and-missed-spikes.png" aria-label="View full-size chart: False positive and false negative counts by model; oversampling reduces misses but increases false alarms">
+                        <img src="images/electricity_forecast/false-alarms-and-missed-spikes.png" alt="False positive and false negative counts by model; oversampling reduces misses but increases false alarms" width="1207" height="600" loading="lazy">
+                    </a>
+                    <figcaption>Report Figure 5: the tradeoff between false alarms and missed spikes explains the cost comparison.</figcaption>
+                </figure>
+                <div class="project-copy project-closing">
+                    <h2>Preserving everyday performance</h2>
+                    <p>Separating normal and spike periods reveals behavior that an overall error score can hide. Oversampling lowers spike error but increases normal-period error; moderate weighting provides a more balanced result.</p>
+                </div>
+                <figure>
+                    <a href="images/electricity_forecast/normal-and-spike-error.png" aria-label="View full-size chart: Bar chart comparing normal and spike mean absolute error for each model">
+                        <img src="images/electricity_forecast/normal-and-spike-error.png" alt="Bar chart comparing normal and spike mean absolute error for each model" width="1197" height="591" loading="lazy">
+                    </a>
+                    <figcaption>Report Figure 7: mean absolute error in the transformed, differenced target, separated by normal and spike regimes.</figcaption>
+                </figure>
+                <div class="project-copy project-closing">
+                    <h2>What the study suggests</h2>
+                    <p>In these experiments, moderate cost-sensitive training provides a better balance than either conservative predictions or aggressive emphasis on spikes. Changing the prediction threshold can move the balance between misses and false alarms, but does not improve the underlying forecast.</p>
+                    <p>The study covers one electricity market and uses simplified, fixed error penalties. Residual demand, outages, and generation availability are not explicitly modeled. Incorporating these system conditions and testing other markets are directions for further work.</p>
+                </div>
+                <footer class="project-copy project-closing">
+                    <h2>Read the full report</h2>
+                    <p>Designing Forecasting Models for Rare High-Impact Events in Electricity Markets, by Martin He. The report includes preprocessing diagnostics, model comparisons, threshold analysis, and references.</p>
+                    <a class="text-control" href="images/electricity_forecast/Intro_to_DL_Final_Final.pdf">Read the full report (PDF) &rarr;</a>
+                </footer>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
