@@ -133,3 +133,19 @@ button {
         --transition-duration: 0ms;
     }
 }
+
+/* Shared media surfaces in the gallery and individual project pages. */
+.project,
+.project-layout figure {
+    padding: var(--space-small);
+    border: 0.5px solid var(--glass-border);
+    border-radius: 8px;
+    background: var(--glass-bg);
+    box-shadow: 0 0 20px var(--glass-shadow);
+}
+
+.project-preview,
+.project-layout figure img,
+.project-video {
+    border-radius: 8px;
+}

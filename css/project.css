@@ -40,6 +40,15 @@
     height: auto;
 }
 
+/* Responsive embeds shared by project pages. */
+.project-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
 .project-layout figcaption {
     margin-top: var(--space-small);
 }

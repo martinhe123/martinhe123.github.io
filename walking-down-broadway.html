@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walking Down Broadway | Martin He</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/project.css">
+</head>
+<body>
+    <main>
+        <section class="screen is-active" id="walking-down-broadway" aria-labelledby="project-title">
+            <div class="screen-content project-layout">
+                <a class="text-control" href="index.html#portfolio">&larr; Back to portfolio</a>
+                <header class="project-header">
+                    <p class="project-label">Computational Design / Interactive Experience</p>
+                    <h1 id="project-title">Walking Down Broadway</h1>
+                    <p class="project-location">Nashville, Tennessee / Virtual environment</p>
+                </header>
+
+                <figure>
+                    <iframe
+                        class="project-video"
+                        src="https://www.youtube-nocookie.com/embed/h1ZbFu-W11s"
+                        title="Walking Down Broadway — gameplay video by Martin He"
+                        width="1280"
+                        height="720"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen
+                    ></iframe>
+                    <figcaption>Walking Down Broadway: gameplay video by Martin He. <a href="https://www.youtube.com/watch?v=h1ZbFu-W11s">Watch on YouTube</a>.</figcaption>
+                </figure>
+                <div class="project-overview">
+                    <dl class="project-credits">
+                        <dt>Course</dt><dd>CMU 15-112</dd>
+                        <dt>Instructor</dt><dd>Professor Mike Taylor</dd>
+                        <dt>My role</dt><dd>Individual project: game design and programming</dd>
+                        <dt>Tools</dt><dd>Python, CMU Graphics, OpenCV, OpenAI API</dd>
+                    </dl>
+                    <div class="project-copy">
+                        <h2>Translating a city into an interactive experience</h2>
+                        <p>Walking Down Broadway explores Nashville through an interactive game. Music, neon light, street life, and conversations become the building blocks of a virtual urban environment.</p>
+                        <p>Built in Python, the project brings together animated characters, AI dialogue, and image processing. Its focus is the relationship between a place's character and the systems that make a digital scene feel alive.</p>
+                    </div>
+                </div>
+                <figure>
+                    <a href="images/walking_down_Broadway/Portfolio_CMU_2025_V2_Part3.png" aria-label="View full-size image: Portfolio board mapping Nashville landmarks and character behavior probabilities">
+                        <img src="images/walking_down_Broadway/Portfolio_CMU_2025_V2_Part3.png" alt="Portfolio board mapping Nashville landmarks and character behavior probabilities" width="5065" height="3167" loading="lazy">
+                    </a>
+                    <figcaption>Mapping the city and its characters. Select any board to inspect it at full size.</figcaption>
+                </figure>
+                <div class="project-copy project-closing">
+                    <h2>From urban observation to game design</h2>
+                    <p>The design draws on Broadway's music venues, recognizable buildings, and social activity. Precedents such as Assassin's Creed and Red Dead Redemption informed the use of environmental storytelling to establish a sense of place.</p>
+                    <p>Players approach characters and engage in conversations through the OpenAI API, connecting the experience of exploring the street with responsive dialogue.</p>
+                </div>
+                <figure>
+                    <a href="images/walking_down_Broadway/Portfolio_CMU_2025_V2_Part4.png" aria-label="View full-size image: Design research board pairing urban and game precedents with screenshots of character dialogue">
+                        <img src="images/walking_down_Broadway/Portfolio_CMU_2025_V2_Part4.png" alt="Design research board pairing urban and game precedents with screenshots of character dialogue" width="5040" height="3197" loading="lazy">
+                    </a>
+                    <figcaption>Design research, environmental storytelling, and character interaction.</figcaption>
+                </figure>
+                <div class="project-copy project-closing">
+                    <p class="project-label">Implementation / Behavior &amp; Light</p>
+                    <h2>Simple rules, changing street life</h2>
+                    <p>A Markov chain governs transitions between idle, walking, running, and congregating states. Probabilistic behavior gives the crowd variation beyond fixed, scripted paths.</p>
+                    <p>OpenCV identifies bright regions in the scene through pixel intensity and thresholding. These regions inform the neon lighting effect, linking image analysis to the visual atmosphere of Broadway.</p>
+                </div>
+                <figure>
+                    <a href="images/walking_down_Broadway/Portfolio_CMU_2025_V2_Part5.png" aria-label="View full-size image: Technical board showing NPC state transitions, Python code, and bright-region image analysis">
+                        <img src="images/walking_down_Broadway/Portfolio_CMU_2025_V2_Part5.png" alt="Technical board showing NPC state transitions, Python code, and bright-region image analysis" width="5040" height="3197" loading="lazy">
+                    </a>
+                    <figcaption>Character behavior and computer vision: from algorithms to the game scene.</figcaption>
+                </figure>
+                <footer class="project-copy project-closing">
+                    <h2>Project credits</h2>
+                    <p>An individual project by Martin He for CMU 15-112, taught by Professor Mike Taylor.</p>
+                    <a class="text-control" href="https://www.youtube.com/watch?v=h1ZbFu-W11s">Watch the game demo &rarr;</a>
+                </footer>
+
+            </div>
+        </section>
+    </main>
+</body>
+</html>
