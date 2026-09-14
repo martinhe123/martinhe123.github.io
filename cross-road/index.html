@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cross Road | Martin He</title>
+    <link rel="stylesheet" href="base.css">
+</head>
+<body>
+    <header class="game-navigation"><a href="../index.html#portfolio">&larr; Portfolio</a><span>Cross Road · JavaScript / Canvas</span></header>
+    <main class="game-container">
+        <!-- Start Menu -->
+        <div id="startMenu" class="game-menu">
+            <h1 class="text-title">CROSS ROAD</h1>
+            <p class="text-subtitle">Move with WASD, arrow keys, or the buttons below.</p>
+            <p class="text-body">Avoid cars. Ride rafts across rivers.</p>
+            <br>
+            <button id="startBtn" class="btn">START GAME</button>
+        </div>
+        
+        <!-- Game Over Menu -->
+        <div id="gameOverMenu" class="game-menu hidden">
+            <h1 class="text-title">GAME OVER</h1>
+            <p id="finalScore" class="text-subtitle">Score: 0</p>
+            <br>
+            <button id="restartBtn" class="btn">PLAY AGAIN</button>
+        </div>
+        
+        <canvas id="gameCanvas" class="game-canvas" width="800" height="600" aria-label="Cross Road play area">Your browser must support Canvas to play.</canvas>
+        
+        <!-- Game HUD -->
+        <div id="gameHud" class="game-hud hidden">
+            <div class="text-body">Score: <span id="currentScore">0</span></div>
+            <div class="text-small">Press ESC to pause</div>
+        </div>
+    </main>
+    <nav class="game-controls" aria-label="Game controls">
+        <button class="btn" data-key="ArrowLeft" aria-label="Move left">&larr;</button>
+        <button class="btn" data-key="ArrowUp" aria-label="Move forward">&uarr;</button>
+        <button class="btn" data-key="ArrowDown" aria-label="Move backward">&darr;</button>
+        <button class="btn" data-key="ArrowRight" aria-label="Move right">&rarr;</button>
+        <button class="btn" id="pauseBtn">Pause</button>
+    </nav>
+    <p class="project-note">A Crossy Road-inspired class project exploring AI-assisted JavaScript development. ESC pauses; R restarts while paused.</p>
+    <script type="module" src="main.js"></script>
+</body>
+</html>
