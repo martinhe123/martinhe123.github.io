@@ -3,45 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cross Road | Martin He</title>
+    <title>Crossy Road | Martin He</title>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/project.css">
     <link rel="stylesheet" href="base.css">
 </head>
 <body>
-    <header class="game-navigation"><a href="../index.html#portfolio">&larr; Portfolio</a><span>Cross Road · JavaScript / Canvas</span></header>
-    <main class="game-container">
+    <main>
+        <section class="screen is-active" aria-labelledby="project-title">
+            <div class="screen-content project-layout">
+                <a class="text-control" href="../index.html#portfolio">&larr; Back to portfolio</a>
+                <header class="project-header">
+                    <p class="project-label">JavaScript / Canvas · AI-assisted game development</p>
+                    <h1 id="project-title">Crossy Road</h1>
+                </header>
+                <div class="game-container">
         <!-- Start Menu -->
         <div id="startMenu" class="game-menu">
-            <h1 class="text-title">CROSS ROAD</h1>
+            <h2 class="text-title">Ready to cross?</h2>
             <p class="text-subtitle">Move with WASD, arrow keys, or the buttons below.</p>
             <p class="text-body">Avoid cars. Ride rafts across rivers.</p>
-            <br>
-            <button id="startBtn" class="btn">START GAME</button>
+                <button id="startBtn" class="text-control">Start game</button>
         </div>
         
         <!-- Game Over Menu -->
         <div id="gameOverMenu" class="game-menu hidden">
-            <h1 class="text-title">GAME OVER</h1>
+            <h2 class="text-title">Game over</h2>
             <p id="finalScore" class="text-subtitle">Score: 0</p>
-            <br>
-            <button id="restartBtn" class="btn">PLAY AGAIN</button>
+                <button id="restartBtn" class="text-control">Play again</button>
         </div>
         
-        <canvas id="gameCanvas" class="game-canvas" width="800" height="600" aria-label="Cross Road play area">Your browser must support Canvas to play.</canvas>
+        <canvas id="gameCanvas" class="game-canvas" width="800" height="600" aria-label="Crossy Road play area">Your browser must support Canvas to play.</canvas>
         
         <!-- Game HUD -->
         <div id="gameHud" class="game-hud hidden">
             <div class="text-body">Score: <span id="currentScore">0</span></div>
             <div class="text-small">Press ESC to pause</div>
         </div>
-    </main>
+                </div>
     <nav class="game-controls" aria-label="Game controls">
-        <button class="btn" data-key="ArrowLeft" aria-label="Move left">&larr;</button>
-        <button class="btn" data-key="ArrowUp" aria-label="Move forward">&uarr;</button>
-        <button class="btn" data-key="ArrowDown" aria-label="Move backward">&darr;</button>
-        <button class="btn" data-key="ArrowRight" aria-label="Move right">&rarr;</button>
-        <button class="btn" id="pauseBtn">Pause</button>
+        <button class="text-control" data-key="ArrowLeft" aria-label="Move left">&larr;</button>
+        <button class="text-control" data-key="ArrowUp" aria-label="Move forward">&uarr;</button>
+        <button class="text-control" data-key="ArrowDown" aria-label="Move backward">&darr;</button>
+        <button class="text-control" data-key="ArrowRight" aria-label="Move right">&rarr;</button>
+        <button class="text-control" id="pauseBtn">Pause</button>
     </nav>
     <p class="project-note">A Crossy Road-inspired class project exploring AI-assisted JavaScript development. ESC pauses; R restarts while paused.</p>
+            </div>
+        </section>
+    </main>
     <script type="module" src="main.js"></script>
 </body>
 </html>

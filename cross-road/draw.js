@@ -52,7 +52,8 @@ export function draw(ctx, gameState, lanes, roadOffset, rafts, cars, player) {
     
     // Draw pause overlay
     if (gameState === 'paused') {
-        ctx.fillStyle = COLORS.pauseOverlay;
+        const pageStyle = getComputedStyle(document.body);
+        ctx.fillStyle = pageStyle.getPropertyValue('--color-background').trim();
         ctx.fillRect(-100, -100, 1000, 800);
         
         // Counter-rotate to draw text straight
@@ -61,13 +62,13 @@ export function draw(ctx, gameState, lanes, roadOffset, rafts, cars, player) {
         ctx.rotate(-CANVAS_ROTATION * Math.PI / 180);
         ctx.translate(-400, -300);
         
-        ctx.fillStyle = COLORS.pauseText;
-        ctx.font = '48px monospace';
+        ctx.fillStyle = pageStyle.getPropertyValue('--color-text').trim();
+        ctx.font = '48px ' + pageStyle.fontFamily;
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         ctx.fillText('PAUSED', 400, 300);
         
-        ctx.font = '24px monospace';
+        ctx.font = '24px ' + pageStyle.fontFamily;
         ctx.fillText('Press ESC to resume', 400, 360);
         ctx.fillText('Press R to restart', 400, 400);
         
